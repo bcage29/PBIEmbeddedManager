@@ -53,14 +53,14 @@ The PBI Manager Web is a dotnet core project hosting a simple Frontend for the i
 4. Create an Azure AD Group for the service principals (i.e., Power BI Service Principals)
 5. Add the service account to the resource group with the contributor role
 6. Add the service account to the group created in step 4
-7. Go to https://app.powerbi.com/admin-portal/tenantSettings and configure Allow service principals to use Power BI APIs in the Developer Settings section
-8. Update the application settings in the PBIAzureManagerService
-9. If you need the service principal to create new service principals and add roles to those generated service principals, add the service account as a gloabl administrator (NOTE: only necessary for creating new service principals to manage a workspace. This process can happen before hand and is not necessary for interacting with PowerBI)
-
-NOTE: The Workspace Service that handles creating a service principal and adding that service princpal to a workspace and capacity has been commented out. Once the service principal creating/fetching has been implemented, you can uncomment this code.
+7. Go to https://app.powerbi.com/admin-portal/tenantSettings and configure Allow service principals to use Power BI APIs in the Developer Settings section.
+8. Select Apply to: Specific security groups (Recommended)
+9. Add the Power BI service principals group (step 4) in the input field
+10. Apply
+11. Update the application settings in the PBIAzureManagerService
 
 ## Permissions
-To run this sample, the service account that is talking to Azure and Power BI needs to be a contributor of the recource group where the Power BI capacities will be created. The service account also needs to be a member of the Power BI Service Principlas group (refer to step 4 in SetUp).
+To run this sample, the service account that is talking to Azure and Power BI needs to be a contributor of the recource group or subscription where the Power BI capacities will be created. The service account also needs to be a member of the Power BI Service Principlas group (refer to step 4 in SetUp).
 
 ## PBIX
 This sample was created from the NY Taxi Data Warehouse for simplicity and the sample PBIX can be found in the solution files. In Power BI Desktop, connect to your data source and create your model. Once your model is created, add parameters to the dataset for 'servername' and 'databasename'. This will allow for the dataset to be parametrized and updated in Power BI. 
