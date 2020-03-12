@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a sample application for automating the management of Power BI Embedded capacities and Power BI Workspaces (V2) using a dotnet core application. The application is divided into three different projects (Backend/Frontend/Database console app). The Visual Studio solution is set to have multiple start up projects which starts the Frontend and Backend projects. The  NOTE: There is no authentication between the Frontend and Backend projects.
+This is a sample application for automating the management of Power BI Embedded capacities and Power BI Workspaces (V2) using a dotnet core application. The application is divided into two different projects (Backend/Frontend). The Visual Studio solution is set to have multiple start up projects which starts the Frontend and Backend projects. The  NOTE: There is no authentication between the Frontend and Backend projects.
 
 This repo to contain demos for automating PowerBI Embedded Capacities and Workspaces. The samples will include how-to examples for the following scenarios:
 
