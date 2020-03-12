@@ -1,0 +1,50 @@
+﻿@page
+@model PBIManagerWeb.Pages.ManageWorkspaceModel
+@{
+    ViewData["Title"] = "ManageWorkspace";
+    Layout = "_DashboardLayout";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+    <h2>Manage Workspaces</h2>
+</div>
+
+<form method="post">
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Workspaces[0].Name)
+                    </th>
+                    <th>
+                        Is On Dedicated Capacity
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Workspaces)
+                {
+                    <tr>
+                        <td>
+                            <input type="hidden" asp-for="@item.Id" />
+                            <input type="hidden" asp-for="@item.Name" />
+                            <input type="hidden" asp-for="@item.IsOnDedicatedCapacity" />
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsOnDedicatedCapacity)
+                        </td>
+                        <td>
+                            <a class="btn btn-link" asp-page="./Upload" asp-route-Id="@item.Id">Upload</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</form>

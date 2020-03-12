@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>16cdf33f-040a-4550-a3ee-baa0b8c89666</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Models</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Azure\ResourceGroup.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Capacity\Byok.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Capacity\CapacityNameAvailable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Capacity\CapacityProperties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Capacity\DeleteCapacity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Capacity\PBIAzureCapacity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Capacity\PBISkuRegion.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Capacity\CapacityAdministrators.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Capacity\CapacitySku.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Capacity\CreateCapacity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Workspace\AssignToCapacity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Workspace\CreateWorkspaceRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Workspace\DeleteReportRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Workspace\UploadFileRequest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Azure\" />
+  </ItemGroup>
+</Project>

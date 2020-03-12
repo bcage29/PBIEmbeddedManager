@@ -1,0 +1,67 @@
+﻿@page
+@model PBIManagerWeb.Pages.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div>
+    <h2>Edit [@Model.Capacity.Name]</h2>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Capacity.Id" />
+            <input type="hidden" asp-for="Capacity.Name" />
+            <input type="hidden" asp-for="Capacity.ResourceGroup" />
+            <input type="hidden" asp-for="Capacity.Status" />
+            <input type="hidden" asp-for="Capacity.Region" />
+            <input type="hidden" asp-for="Capacity.Administrators" />
+
+            <div class="form-group">
+                <label asp-for="Capacity.Name" class="control-label"></label>
+                <input type="text" readonly class="form-control" value="@Model.Capacity.Name" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Capacity.ResourceGroup" class="control-label"></label>
+                <input type="text" readonly class="form-control" value="@Model.Capacity.ResourceGroup" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Capacity.Status" class="control-label"></label>
+                <input type="text" readonly class="form-control" value="@Model.Capacity.Status" />
+                @if (Model.Capacity.Status == "Active")
+                {
+                    <button class="btn btn-link" asp-page-handler="updateState">Pause</button>
+                }
+                @if (Model.Capacity.Status == "Paused")
+                {
+                    <button class="btn btn-link" asp-page-handler="updateState">Resume</button>
+                }
+            </div>
+            <div class="form-group">
+                <label asp-for="Capacity.Sku" class="control-label"></label>
+                <select class="custom-select d-block w-100" asp-for="Capacity.Sku" asp-items="Model.AvailableSkus" required>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Capacity.Region" class="control-label"></label>
+                <input type="text" readonly class="form-control" value="@Model.Capacity.Region" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Capacity.Administrators" class="control-label"></label>
+                @foreach (var admin in @Model.Capacity.Administrators)
+                {
+                    <p>@admin</p>
+                }
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

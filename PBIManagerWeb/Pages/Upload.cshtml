@@ -1,0 +1,32 @@
+﻿@page
+@model PBIManagerWeb.Pages.UploadModel
+@{
+    ViewData["Title"] = "Upload";
+}
+
+<div>
+    <h2>Upload to @Model.Workspace.Name</h2>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Workspace.Id" />
+            <input type="hidden" asp-for="Workspace.Name" />
+            <input type="file" asp-for="Upload" />
+            
+            <input type="submit" />
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div>
+        <a asp-page="./ManageWorkspace">Back to Manage Workspaces</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

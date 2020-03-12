@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Models", "Models\Models.shproj", "{16CDF33F-040A-4550-A3EE-BAA0B8C89666}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PBIManagerWeb", "PBIManagerWeb\PBIManagerWeb.csproj", "{2CFDC792-BC06-41D6-B80E-FA480821695D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0A4E2E62-1DE1-45A6-BCA4-ECFE851EA562}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		Solution Items\NYTaxiDataRelationships.pbix = Solution Items\NYTaxiDataRelationships.pbix
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{23D87A74-68C7-42AB-9591-936A38D9C77B}"
+	ProjectSection(SolutionItems) = preProject
+		Solution Items\CreateServicePrincipal.ps1 = Solution Items\CreateServicePrincipal.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{9B6EAC00-A7BB-4FAB-9FFD-49CEAB406786}"
+	ProjectSection(SolutionItems) = preProject
+		Solution Items\AddRoleAssignmentToRG.png = Solution Items\AddRoleAssignmentToRG.png
+		Solution Items\AzureADApplication.png = Solution Items\AzureADApplication.png
+		Solution Items\AzureADSPObjectId.png = Solution Items\AzureADSPObjectId.png
+		Solution Items\PbixConnectionParameters.png = Solution Items\PbixConnectionParameters.png
+		Solution Items\PowerBISetting.png = Solution Items\PowerBISetting.png
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PBIManagerService", "PBIManagerService\PBIManagerService.csproj", "{40E35EB6-2B7D-4629-9103-1014B06470C3}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Models\Models.projitems*{16cdf33f-040a-4550-a3ee-baa0b8c89666}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2CFDC792-BC06-41D6-B80E-FA480821695D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CFDC792-BC06-41D6-B80E-FA480821695D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CFDC792-BC06-41D6-B80E-FA480821695D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CFDC792-BC06-41D6-B80E-FA480821695D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40E35EB6-2B7D-4629-9103-1014B06470C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40E35EB6-2B7D-4629-9103-1014B06470C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40E35EB6-2B7D-4629-9103-1014B06470C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40E35EB6-2B7D-4629-9103-1014B06470C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{23D87A74-68C7-42AB-9591-936A38D9C77B} = {0A4E2E62-1DE1-45A6-BCA4-ECFE851EA562}
+		{9B6EAC00-A7BB-4FAB-9FFD-49CEAB406786} = {0A4E2E62-1DE1-45A6-BCA4-ECFE851EA562}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {90BA0D7A-8CCF-477E-9C9D-90B795B33344}
+	EndGlobalSection
+EndGlobal

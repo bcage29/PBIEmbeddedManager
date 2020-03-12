@@ -1,0 +1,63 @@
+﻿@page
+@model PBIManagerWeb.Pages.ManageModel
+@{
+    Layout = "_DashboardLayout";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+    <h2>Manage Capacities</h2>
+</div>
+
+<form method="post">
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PBIResouces[0].Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PBIResouces[0].Location)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PBIResouces[0].Sku)
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.PBIResouces)
+                {
+                <tr>
+                    <td>
+                        <input type="hidden" asp-for="@item.Id" />
+                        <input type="hidden" asp-for="@item.Location" />
+                        <input type="hidden" asp-for="@item.Sku.Name" />
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                      <td>
+                        @Html.DisplayFor(modelItem => item.Location)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sku.Name)
+                    </td>
+                    <td>
+                        <a class="btn btn-link" asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                        <a class="btn btn-link" asp-page="./Edit" asp-route-Id="@item.Id" asp-route-Location="@item.Location">Edit</a> |
+                        <button class="btn btn-link" asp-page-handler="delete" asp-route-id="@item.Id" onclick="return confirm('Are you sure you want to delete this?')">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</form>
+
+@*Resource 1 --- [Pause] | [Resume] ---  [Change size--pop up confirm] --- [Delete--pop up confirm] ---
+    Resource 1 --- [Pause] | [Resume] ---  [Change size] --- [Delete--pop up confirm] ---
+    Resource 1 --- [Pause] | [Resume] ---  [Change size] --- [Delete--pop up confirm] ---*@
